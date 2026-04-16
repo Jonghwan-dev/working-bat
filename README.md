@@ -9,7 +9,7 @@
 ![Python](https://img.shields.io/badge/Python-3.8+-3776AB?logo=python&logoColor=white)
 ![Slack](https://img.shields.io/badge/Slack-Bolt-4A154B?logo=slack&logoColor=white)
 
-**[English](#english) · [한국어](#한국어)**
+**[Guidance (EN)](#english-guide) · [가이드 (KO)](#korean-guide)**
 
 </div>
 
@@ -59,6 +59,7 @@ Each server                          Bot server (any machine)
 
 ## Setup Guide
 
+<a name="english-guide"></a>
 <details>
 <summary><b>English — Full Setup Guide (A–Z)</b></summary>
 
@@ -176,6 +177,7 @@ git pull && pm2 restart working-bat
 
 ---
 
+<a name="korean-guide"></a>
 <details>
 <summary><b>한국어 — 전체 설치 가이드 (A–Z)</b></summary>
 
