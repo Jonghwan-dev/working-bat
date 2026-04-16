@@ -1,0 +1,16 @@
+[Unit]
+Description=Server Metrics Agent
+After=network.target
+
+[Service]
+Type=simple
+User=army
+WorkingDirectory=/home/army/working-bat/agent
+ExecStart=/usr/bin/python3 /home/army/working-bat/agent/agent.py
+# fix: set TZ=Asia/Seoul so agent.log timestamps display in KST  2026-04-15 JHKim
+Environment=TZ=Asia/Seoul
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target

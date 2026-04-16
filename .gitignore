@@ -1,0 +1,8 @@
+.env
+*.db
+*.log
+metrics_cache.json
+logs/
+node_modules/
+agent/agent.config
+agent/agent.service
