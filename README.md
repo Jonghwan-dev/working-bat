@@ -74,13 +74,13 @@ Each server                          Bot server (any machine)
 
 ### 1. Create Slack App
 
-**1-1.** Go to [api.slack.com/apps](https://api.slack.com/apps) → **Create New App** → **From scratch**
+**1-1.** Go to [api.slack.com/apps](https://api.slack.com/apps) → **Create New App** → **From scratch**  
 
-**1-2. Enable Socket Mode**
+**1-2. Enable Socket Mode**  
 `Settings` → `Socket Mode` → Enable → Generate App-Level Token (scope: `connections:write`)
 → Save as `SLACK_APP_TOKEN` (`xapp-...`)
 
-**1-3. Add OAuth Scopes**
+**1-3. Add OAuth Scopes**  
 `Features` → `OAuth & Permissions` → `Bot Token Scopes`
 
 | Scope | Purpose |
@@ -89,13 +89,13 @@ Each server                          Bot server (any machine)
 | `users:info` | Resolve display names |
 | `app_mentions:read` | — |
 
-**1-4. Enable App Home**
+**1-4. Enable App Home**  
 `Features` → `App Home` → **Home Tab** ✅
 
-**1-5. Subscribe to Events**
+**1-5. Subscribe to Events**  
 `Features` → `Event Subscriptions` → Enable → Add bot event: `app_home_opened`
 
-**1-6. Add Slash Command**
+**1-6. Add Slash Command**  
 `Features` → `Slash Commands` → **Create New Command**
 
 | Field | Value |
@@ -103,11 +103,11 @@ Each server                          Bot server (any machine)
 | Command | `/server` |
 | Request URL | `https://placeholder.example.com` (unused in Socket Mode) |
 
-**1-7. Install to Workspace**
+**1-7. Install to Workspace**  
 `Settings` → `Install App` → **Install to Workspace**
 → Copy **Bot User OAuth Token** → `SLACK_BOT_TOKEN` (`xoxb-...`)
 
-**1-8. Collect All Tokens**
+**1-8. Collect All Tokens**  
 
 | Variable | Location |
 |---|---|
@@ -157,7 +157,7 @@ token     = <same as METRICS_SECRET>
 interval  = 10
 ```
 
-**Run as systemd service:**
+**Run as systemd service:**  
 ```bash
 sudo cp agent.service.example /etc/systemd/system/server-agent.service
 sudo vi /etc/systemd/system/server-agent.service   # set User and WorkingDirectory
@@ -167,7 +167,7 @@ sudo systemctl enable --now server-agent
 
 ---
 
-### 4. Update
+### 4. Update  
 
 ```bash
 git pull && pm2 restart working-bat
@@ -183,22 +183,22 @@ git pull && pm2 restart working-bat
 
 <br>
 
-### 사전 준비
+### 사전 준비  
 
 - Node.js 18+, Python 3.8+, PM2 (`npm i -g pm2`)
 - `apt install python3 make g++` (better-sqlite3 빌드용)
 
 ---
 
-### 1. Slack 앱 생성
+### 1. Slack 앱 생성  
 
 **1-1.** [api.slack.com/apps](https://api.slack.com/apps) → **Create New App** → **From scratch**
 
-**1-2. Socket Mode 활성화**
+**1-2. Socket Mode 활성화**  
 `Settings` → `Socket Mode` → 활성화 → App-Level Token 생성 (scope: `connections:write`)
 → `SLACK_APP_TOKEN` (`xapp-...`)으로 저장
 
-**1-3. OAuth 스코프 추가**
+**1-3. OAuth 스코프 추가**  
 `Features` → `OAuth & Permissions` → `Bot Token Scopes`
 
 | Scope | 용도 |
@@ -207,13 +207,13 @@ git pull && pm2 restart working-bat
 | `users:info` | 사용자 이름 조회 |
 | `app_mentions:read` | — |
 
-**1-4. App Home 활성화**
+**1-4. App Home 활성화**  
 `Features` → `App Home` → **Home Tab** ✅
 
-**1-5. 이벤트 구독**
+**1-5. 이벤트 구독**  
 `Features` → `Event Subscriptions` → 활성화 → bot event 추가: `app_home_opened`
 
-**1-6. 슬래시 명령어 추가**
+**1-6. 슬래시 명령어 추가**  
 `Features` → `Slash Commands` → **Create New Command**
 
 | 항목 | 값 |
@@ -221,11 +221,11 @@ git pull && pm2 restart working-bat
 | Command | `/server` |
 | Request URL | `https://placeholder.example.com` (Socket Mode에서 미사용) |
 
-**1-7. 워크스페이스 설치**
+**1-7. 워크스페이스 설치**  
 `Settings` → `Install App` → **Install to Workspace**
 → **Bot User OAuth Token** 복사 → `SLACK_BOT_TOKEN` (`xoxb-...`)
 
-**1-8. 토큰 정리**
+**1-8. 토큰 정리**  
 
 | 환경변수 | 위치 |
 |---|---|
@@ -235,7 +235,7 @@ git pull && pm2 restart working-bat
 
 ---
 
-### 2. 봇 서버
+### 2. 봇 서버  
 
 ```bash
 git clone https://github.com/Jonghwan-dev/working-bat.git
@@ -275,7 +275,7 @@ token     = <METRICS_SECRET과 동일>
 interval  = 10
 ```
 
-**systemd 서비스로 등록:**
+**systemd 서비스로 등록:**  
 ```bash
 sudo cp agent.service.example /etc/systemd/system/server-agent.service
 sudo vi /etc/systemd/system/server-agent.service   # User, WorkingDirectory 수정
